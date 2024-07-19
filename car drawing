@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="carCanvas" width="400" height="400"></canvas>
+    <script>
+        // Get the canvas element and its context
+        var canvas = document.getElementById('carCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Function to draw a rectangle
+        function drawRectangle(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+
+        // Function to draw a circle
+        function drawCircle(x, y, radius, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        // Draw the car body
+        drawRectangle(100, 200, 200, 50, 'blue');
+        drawRectangle(130, 170, 140, 40, 'blue');
+
+        // Draw the windows
+        drawRectangle(145, 180, 30, 30, 'lightblue');
+        drawRectangle(225, 180, 30, 30, 'lightblue');
+
+        // Draw the wheels
+        drawCircle(140, 260, 20, 'black');
+        drawCircle(260, 260, 20, 'black');
+    </script>
+</body>
+</html>
